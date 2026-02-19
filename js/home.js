@@ -383,24 +383,22 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       // episodio
-      if (Number.isFinite(item.season) && Number.isFinite(item.episode)) {
-        const url = new URL("episodes.html", window.location.origin);
-        url.searchParams.set("id", item.id);
-        url.searchParams.set("season", String(item.season));
-        url.searchParams.set("col", col);
-        if (col === "collections" && cid) url.searchParams.set("cid", cid);
-        // opcional: marcar origen
-        // url.searchParams.set("from", "home");
-        window.location.href = url.toString();
-        return;
-      }
+if (Number.isFinite(item.season) && Number.isFinite(item.episode)) {
+  const url = new URL("episodes.html", document.baseURI);
+  url.searchParams.set("id", item.id);
+  url.searchParams.set("season", String(item.season));
+  url.searchParams.set("col", col);
+  if (col === "collections" && cid) url.searchParams.set("cid", cid);
+  window.location.href = url.toString();
+  return;
+}
 
-      // película
-      const durl = new URL("details.html", window.location.origin);
-      durl.searchParams.set("id", item.id);
-      durl.searchParams.set("col", col);
-      if (col === "collections" && cid) durl.searchParams.set("cid", cid);
-      window.location.href = durl.toString();
+// película
+const durl = new URL("details.html", document.baseURI);
+durl.searchParams.set("id", item.id);
+durl.searchParams.set("col", col);
+if (col === "collections" && cid) durl.searchParams.set("cid", cid);
+window.location.href = durl.toString();
     });
 
     return card;
