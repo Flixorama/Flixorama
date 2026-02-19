@@ -161,23 +161,22 @@ function requestCloseMovie() {
 }
 
 async function enterFullscreenAndLandscapeForMovie() {
-  // iOS Safari
   try {
-    if (movieVideo && typeof movieVideo.webkitEnterFullscreen === "function") {
-      movieVideo.webkitEnterFullscreen();
-      return;
+    // Prioridad: fullscreen en el VIDEO
+    if (movieVideo?.requestFullscreen) {
+      await movieVideo.requestFullscreen();
+    } else if (movieModal?.requestFullscreen) {
+      await movieModal.requestFullscreen();
     }
-  } catch {}
-
-  try {
-    if (movieVideo?.requestFullscreen) await movieVideo.requestFullscreen();
-    else if (movieModal?.requestFullscreen) await movieModal.requestFullscreen();
   } catch (e) {
     console.warn("Fullscreen bloqueado:", e);
   }
 
   try {
-    if (screen.orientation?.lock) await screen.orientation.lock("landscape");
+    // Intentar bloquear orientación
+    if (screen.orientation?.lock) {
+      await screen.orientation.lock("landscape");
+    }
   } catch (e) {
     console.warn("Orientation lock no disponible:", e);
   }
