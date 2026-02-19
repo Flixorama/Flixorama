@@ -551,7 +551,7 @@ if (backBtn) {
     // ✅ Evita loop: si return_to apunta al MISMO details actual, ignóralo
     if (ret?.url) {
       try {
-        const a = new URL(ret.url, window.location.origin);
+        const a = new URL(ret.url, document.baseURI);
         const b = new URL(window.location.href);
 
         const samePath = a.pathname === b.pathname; // /details.html

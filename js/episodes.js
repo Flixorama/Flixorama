@@ -953,7 +953,7 @@ backBtn?.addEventListener("click", () => {
   const from = getParam("from");
   const q = getParam("q");
 
-  const url = new URL("details.html", window.location.origin);
+  const url = new URL("details.html", document.baseURI);
   url.searchParams.set("id", contentId);
   url.searchParams.set("col", colName);
 
@@ -1009,7 +1009,7 @@ onAuthStateChanged(auth, async (user) => {
   // ✅ Solo para series/anime; si no, regresa a details
   const t = safeText(item.type, "").toLowerCase();
   if (t !== "serie" && t !== "series" && t !== "anime") {
-    const url = new URL("details.html", window.location.origin);
+    const url = new URL("details.html", document.baseURI);
     url.searchParams.set("id", contentId);
     url.searchParams.set("col", colName);
     if (colName === "collections" && cid) url.searchParams.set("cid", cid);
