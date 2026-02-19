@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil | Streaming App</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+  <header class="profile-header">
+    <button id="back-btn" class="back-btn" aria-label="Volver">
+        <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="back-icon"
+            >
+            <path
+            d="M15 18L9 12L15 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            />
+        </svg>
+    </button>
+
+  </header>
+
+    <main class="profile-main">
+        <section class="profile-card">
+            <div class="profile-top">
+            <img
+                src="https://i.pinimg.com/736x/5e/50/3b/5e503b92255dbce21398e6dfcd2852b3.jpg"
+                class="profile-avatar"
+                alt="Usuario"
+            />
+
+            <div class="profile-top-text">
+                <h2 id="profile-email" class="profile-email">usuario@email.com</h2>
+                <p id="profile-badge" class="profile-badge">Cargando…</p>
+            </div>
+            </div>
+
+            <div class="profile-grid">
+            <div class="info-tile">
+                <span>ID de usuario</span>
+                <div class="tile-row">
+                <strong id="profile-uid">---</strong>
+                <button id="copy-uid" class="mini-btn">Copiar</button>
+                </div>
+            </div>
+
+            <div class="info-tile">
+                <span>Contraseña</span>
+                <strong id="profile-provider">---</strong>
+            </div>
+
+            <div class="info-tile">
+                <span>Creado</span>
+                <strong id="profile-created">---</strong>
+            </div>
+
+            <div class="info-tile">
+                <span>Último acceso</span>
+                <strong id="profile-last">---</strong>
+            </div>
+            </div>
+
+            <div class="profile-actions">
+            <button id="verify-email" class="ghost-wide">Verificar correo</button>
+            <button id="reset-pass" class="ghost-wide">Restablecer contraseña</button>
+            <button id="logout-profile" class="danger-btn">Cerrar sesión</button>
+            <p id="profile-msg" class="profile-msg"></p>
+            </div>
+        </section>
+    </main>
+
+
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>

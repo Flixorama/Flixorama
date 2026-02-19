@@ -1,0 +1,1667 @@
+/* ===== Header fijo ===== */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+  border-bottom: 4px solid var(--border);
+  background: rgba(11,11,15,.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  z-index: 1000;
+}
+
+/* Espacio para que el contenido no quede debajo del header */
+.app-main {
+  padding-top: 90px;
+  padding-left: 20px;
+}
+
+/* ===== Lado izquierdo ===== */
+.header-left {
+  display: flex;
+  align-items: center;
+  color: #ecb02e;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.brand-dot {
+  width: 10px;            /* ⬅️ más grande */
+  height: 30px;
+  border-radius: 5px;     /* look más moderno que círculo perfecto */
+  background: linear-gradient(180deg, #ff1a1a, #d20a0a);
+  box-shadow: 0 0 22px rgba(255,26,26,.45);
+}
+
+/* ===== Lado derecho ===== */
+.header-right {
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.user-avatar {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  background: rgba(11,11,15,.85);
+  cursor: pointer;
+}
+
+.usuario img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.user-avatar{
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.user-avatar:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.22);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.user-avatar:active{
+  transform: translateY(0px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Welcome ===== */
+/* ===== Welcome ===== */
+.welcome {
+  margin-bottom: 28px;
+}
+
+.welcome-greeting {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+.welcome-name {
+  margin-top: 2px;
+  font-size: 15px;              /* ⬅️ más pequeño */
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: rgba(255,255,255,.55); /* ⬅️ translúcido */
+}
+
+@media (max-width: 420px) {
+  .welcome-greeting {
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Sections ===== */
+.section {
+  margin-top: 18px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin-left: 20px;
+}
+
+.section-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin-right: 25px;
+}
+
+
+
+
+
+
+
+/* ===== Carousel (One by One / Slider) ===== */
+.carousel{
+  position: relative;
+}
+
+/* Track como slider */
+/* Track sin padding para que no asome el siguiente */
+.carousel-track{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  gap:0;
+  padding:0;
+}
+
+
+/* Oculta scrollbar (opcional) */
+.carousel-track::-webkit-scrollbar{ height: 0px; }
+
+/* Cada card = 1 slide */
+/* ===== Hero Slide (imagen grande) ===== */
+.trend-card{
+  flex:0 0 100%;
+  scroll-snap-align:center;
+  scroll-snap-stop:always;
+
+  height:70vh;
+  min-height:420px;
+  max-height:620px;
+
+  padding:0 16px;     /* margen interno sin mostrar el siguiente */
+  box-sizing:border-box;
+
+  background:transparent;
+  border:none;
+}
+
+
+.trend-card:hover{
+  transform: scale(1.01);
+  box-shadow: 0 30px 80px rgba(0,0,0,.55);
+}
+
+/* Poster ocupa toda la card */
+.trend-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+
+.trend-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.0) 35%, rgba(0,0,0,.85) 100%);
+}
+
+.trend-meta{
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+}
+
+.trend-title{
+  font-size: 16px;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Flechas se mantienen */
+.carousel-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.45);
+  color: rgba(255,255,255,.92);
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity .15s ease, background .15s ease, transform .15s ease;
+  backdrop-filter: blur(10px);
+}
+
+.carousel:hover .carousel-btn{ opacity: 1; }
+.carousel-btn:hover{ background: rgba(0,0,0,.65); }
+.carousel-btn:active{ transform: translateY(-50%) scale(0.96); }
+.carousel-btn.left{ left: 10px; }
+.carousel-btn.right{ right: 10px; }
+
+/* Mobile */
+@media (max-width: 420px){
+  .carousel-track{ padding: 6px 14px 14px; }
+  .trend-card{ height: 220px; border-radius: 16px; }
+  .carousel-btn{ display:none; }
+}
+
+
+@media (max-width:420px){
+  .trend-card{
+    height:55vh;
+    min-height:320px;
+    padding:0 12px;
+  }
+  .trend-inner{ border-radius:18px; }
+}
+
+
+
+
+.trend-inner{
+  height:100%;
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.05);
+}
+
+
+
+/* Fade elegante al “reiniciar” */
+.carousel-track.is-fading{
+  opacity: 0;
+  transition: opacity .22s ease;
+}
+.carousel-track{
+  opacity: 1;
+  transition: opacity .22s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Dots ===== */
+.carousel-dots{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-bottom: 8px;
+}
+
+.dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.22);
+  border: 1px solid rgba(255,255,255,.18);
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, width .12s ease;
+}
+
+.dot.active{
+  background: rgba(255,255,255,.78);
+  width: 18px; /* estilo “pill” pro */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Tipo + Rating ===== */
+.trend-info{
+  margin-top: 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Tipo (movie / serie / anime) */
+.trend-type{
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.85);
+}
+
+/* Rating */
+.trend-rating{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: rgba(0,0,0,.45);
+  color: #ffd86b; /* dorado */
+  border: 1px solid rgba(255,216,107,.35);
+
+  backdrop-filter: blur(6px);
+  margin-left: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Estrenos (cuadrados, sin distorsión) ===== */
+
+.home-section.releases{
+  margin-top: 18px;
+}
+
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin: 0 0 10px 0;
+}
+
+.section-title{
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.section-actions{
+  display:flex;
+  gap:10px;
+}
+
+.arrow-btn{
+  width:38px;
+  height:38px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+}
+
+/* Track horizontal */
+/* ===== Estrenos (cards cuadradas con info encima) ===== */
+
+/* ===== Estrenos ===== */
+
+.release-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 14px 4px 24px 4px;
+  scroll-behavior: smooth;
+}
+
+.release-track::-webkit-scrollbar {
+  display: none;
+}
+
+.release-card {
+  flex: 0 0 190px;         /* 🔥 más grande */
+  aspect-ratio: 4 / 5;     /* 🔥 rectangular moderno */
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+  background: #111;
+}
+
+
+.release-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.release-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 🔥 Degradado cinematográfico */
+.release-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0.6) 35%,
+    rgba(0,0,0,0.2) 60%,
+    rgba(0,0,0,0) 80%
+  );
+}
+
+/* 🔥 CONTENIDO ENCIMA */
+.release-meta {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #fff;
+}
+
+/* 🎬 Título */
+.release-title {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+
+/* Tipo + rating */
+.release-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9px;
+}
+
+.release-type {
+  background: rgba(0, 0, 0, 0.521);
+  padding: 3px 8px;
+  border-radius: 8px;
+  backdrop-filter: blur(1px);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.85);
+}
+
+.release-rating {
+  padding: 3px 8px;
+  border-radius: 99999px;
+  background: rgba(0,0,0,.45);
+  color: #ffd86b; /* dorado */
+  border: 1px solid rgba(255,216,107,.35);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Top 10 ===== */
+/* =========================
+   TOP 10 (CSS COMPLETO)
+   - Fix: elimina duplicado de .top10-badge
+   - #1: corona + glow dorado + borde fino + partículas
+   - #2: plata (glow + borde fino)
+   - #3: bronce (glow + borde fino)
+   - Título debajo de la imagen
+========================= */
+
+/* Track */
+.top10-track{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+
+  /* espacio general arriba/abajo */
+  padding: 25px 18px 20px;
+
+  /* QUITA esto si lo tienes */
+  margin-left: 0;
+
+  /* para que el snap respete el espacio */
+  scroll-padding-left: 14px;
+}
+
+/* ✅ Espacio REAL antes del primer card (no lo recorta el overflow) */
+.top10-track::before{
+  content:"";
+  flex: 0 0 40px; /* aumenta a 50-60 si quieres más aire */
+}
+
+/* ✅ También espacio al final, para que el último no quede pegado */
+.top10-track::after{
+  content:"";
+  flex: 0 0 18px;
+}
+
+
+
+.top10-track::-webkit-scrollbar{ height: 0; }
+
+/* Card */
+.top10-card{
+  width: 170px;
+  flex-shrink: 0;
+  cursor: pointer;
+  overflow: visible;          /* para que el glow se vea fuera */
+  border-radius: 20px;
+  scroll-snap-align: start;
+  margin-left: 15px;
+}
+
+/* Wrapper de imagen */
+.top10-image-wrapper{
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Imagen */
+.top10-image-wrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+}
+
+.top10-card:hover img{
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.top10-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.6), transparent 60%);
+}
+
+/* ===== Badge (ÚNICO: NO DUPLICAR) ===== */
+.top10-badge{
+  position:absolute;
+  right:18px;
+  bottom:10px;
+
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 1;
+
+  color: rgba(255,255,255,0.06);
+  -webkit-text-stroke: 3px rgba(255,255,255,0.9);
+
+  text-shadow: 0 15px 30px rgba(0,0,0,.7);
+
+  pointer-events: none;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Corona (#1) */
+.number-one{
+  -webkit-text-stroke: 3px #ffd700;
+  color: rgba(255,215,0,0.08);
+}
+
+.number-one .crown{
+  font-size: 25px;
+  margin-bottom: -8px;
+  animation: crownFloat 2s ease-in-out infinite;
+}
+
+/* #2 plata */
+.number-two{
+  -webkit-text-stroke: 3px rgba(220,230,245,0.95);
+  color: rgba(230,240,255,0.08);
+  text-shadow:
+    0 15px 30px rgba(0,0,0,.7),
+    0 0 16px rgba(200, 215, 235, .22);
+}
+
+/* #3 bronce */
+.number-three{
+  -webkit-text-stroke: 3px rgba(230,170,120,0.90);
+  color: rgba(255,190,120,0.08);
+  text-shadow:
+    0 15px 30px rgba(0,0,0,.7),
+    0 0 16px rgba(220, 170, 120, .18);
+}
+
+/* ===== Título debajo ===== */
+.top10-title{
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* =========================
+   ESPECIALES: #1 / #2 / #3
+========================= */
+
+/* #1 Dorado: glow + borde fino */
+.top10-gold{
+  position: relative;
+  z-index: 2;
+  border-radius: 16px;
+
+  box-shadow:
+    0 0 0 5px #ffd700,   /* borde fino */
+    0 10px 30px rgba(255, 180, 0, 0.18);  /* profundidad */
+}
+
+
+/* #2 Plata: glow + borde fino */
+.top10-silver{
+  position: relative;
+  border-radius: 16px;
+
+  box-shadow:
+    0 0 0 3px rgba(220, 230, 245, 0.50),
+    0 10px 30px rgba(200, 220, 255, 0.14);
+}
+
+.top10-silver::before{
+  content:"";
+  position:absolute;
+  inset:-10px;
+  border-radius: 18px;
+  background: radial-gradient(
+    circle at 35% 30%,
+    rgba(230, 240, 255, 0.55),
+    rgba(170, 200, 255, 0.16),
+    transparent 70%
+  );
+  filter: blur(18px);
+  z-index:-2;
+  animation: silverPulse 3.4s ease-in-out infinite;
+}
+
+/* #3 Bronce: glow + borde fino */
+.top10-bronze{
+  position: relative;
+  border-radius: 16px;
+
+
+  box-shadow:
+    0 0 0 3px rgba(230, 170, 120, 0.45),
+    0 10px 30px rgba(230, 140, 60, 0.12);
+}
+
+.top10-bronze::before{
+  content:"";
+  position:absolute;
+  inset:-10px;
+  border-radius: 18px;
+  background: radial-gradient(
+    circle at 35% 30%,
+    rgba(255, 205, 160, 0.55),
+    rgba(255, 150, 70, 0.14),
+    transparent 70%
+  );
+  filter: blur(18px);
+  z-index:-2;
+  animation: bronzePulse 3.6s ease-in-out infinite;
+}
+
+/* =========================
+   Animaciones
+========================= */
+
+@keyframes crownFloat{
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes goldPulse{
+  0%   { opacity: .70; transform: scale(1); }
+  50%  { opacity: .95; transform: scale(1.03); }
+  100% { opacity: .70; transform: scale(1); }
+}
+
+@keyframes goldParticles{
+  0%   { background-position: 12% 22%, 28% 78%, 62% 18%, 74% 66%, 88% 30%, 45% 45%; }
+  50%  { background-position: 16% 28%, 24% 70%, 66% 26%, 70% 58%, 84% 36%, 50% 52%; }
+  100% { background-position: 12% 22%, 28% 78%, 62% 18%, 74% 66%, 88% 30%, 45% 45%; }
+}
+
+@keyframes silverPulse{
+  0%   { opacity: .70; transform: scale(1); }
+  50%  { opacity: .92; transform: scale(1.02); }
+  100% { opacity: .70; transform: scale(1); }
+}
+
+@keyframes bronzePulse{
+  0%   { opacity: .68; transform: scale(1); }
+  50%  { opacity: .90; transform: scale(1.02); }
+  100% { opacity: .68; transform: scale(1); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   CONTINUAR VIENDO (PRO)
+   Solo afecta lo que esté dentro de #cw-track
+========================= */
+
+#cw-track{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding: 10px 6px 14px;
+  margin-left: 15px;
+}
+#cw-track::-webkit-scrollbar{ height:0; }
+
+/* Cards más “premium” solo en Continue Watching */
+#cw-track .release-card{
+  width: 170px;              /* un poco más ancha que estrenos */
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+#cw-track .release-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.12);
+  box-shadow: 0 18px 55px rgba(0,0,0,.42);
+}
+
+/* Ajuste de imagen: más “cinematic” */
+#cw-track .release-inner{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* si tu .release-img ya existe, esto solo refina */
+#cw-track .release-img{
+  width:100%;
+  height: 180px;
+  object-fit: cover;
+  display:block;
+  transform: scale(1.01);
+  transition: transform .35s ease;
+}
+#cw-track .release-card:hover .release-img{
+  transform: scale(1.06);
+}
+
+/* Oscurecer base para legibilidad */
+#cw-track .release-inner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.25) 45%, transparent 72%);
+  pointer-events:none;
+}
+
+/* Meta encima de la imagen (como Netflix style) */
+#cw-track .release-meta{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding: 12px 12px 10px;
+  z-index: 2;
+}
+
+/* Título más pro (clamp a 2 líneas) */
+#cw-track .release-title{
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  line-height: 1.2;
+  color: rgba(255,255,255,.96);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Línea de info: tipo / SxEx a la izquierda + % a la derecha */
+#cw-track .release-info{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap:10px;
+  margin-top: 6px;
+}
+
+#cw-track .release-type{
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.72);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+}
+
+/* El “%” como pill */
+#cw-track .release-rating{
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(255,255,255,.92);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+}
+
+/* Barra de progreso pro */
+#cw-track .cw-bar{
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  overflow:hidden;
+  margin-top: 9px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+#cw-track .cw-bar-fill{
+  height: 100%;
+  border-radius: 999px;
+  /* gradiente rojo tipo streaming */
+  background: linear-gradient(90deg, rgba(255,70,70,.95), rgba(255,0,80,.95));
+  box-shadow: 0 8px 18px rgba(255, 40, 80, .22);
+}
+
+/* Sutil “play glow” al hover */
+#cw-track .release-card::before{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  border-radius: 22px;
+  background: radial-gradient(circle at 35% 70%, rgba(255, 40, 80, .18), transparent 55%);
+  opacity: 0;
+  filter: blur(18px);
+  transition: opacity .22s ease;
+  pointer-events:none;
+}
+#cw-track .release-card:hover::before{
+  opacity: 1;
+}
+
+
+
+.continuar-viendo{
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin-left: 20px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,.92);
+}
+
+
+
+
+
+
+
+
+
+
+/* botones debajo del play */
+#resume-choice .resume-pill{
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+
+
+#resume-choice .resume-pill:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+}
+
+
+
+.resume-msg {
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Colecciones en Home ===== */
+/* =========================
+   Colecciones en Home
+========================= */
+
+
+.collections-track{
+  margin-top: 14px;
+  margin-left: 15px; /* espacio para que el primer card no quede pegado al borde */
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:8px 8px 14px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  /* scrollbar suave */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.18) transparent;
+}
+
+
+.collections-track::-webkit-scrollbar{ height:8px; }
+.collections-track::-webkit-scrollbar-track{ background:transparent; }
+.collections-track::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.14);
+  border-radius:999px;
+}
+.collections-track::-webkit-scrollbar-thumb:hover{
+  background: rgba(255,255,255,.22);
+}
+
+.collection-card{
+  flex:0 0 auto;
+  width:250px;
+  height:128px;
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+
+  scroll-snap-align:start;
+
+  /* depth */
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.10);
+
+  transform: translateZ(0);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.collection-card:hover{
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(255,255,255,.18);
+  box-shadow:
+    0 16px 42px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.collection-card:active{
+  transform: translateY(-2px) scale(.995);
+}
+
+.collection-inner{ width:100%; height:100%; position:relative; }
+
+.collection-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform: scale(1.03);
+  transition: transform .35s ease, filter .35s ease;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.collection-card:hover .collection-img{
+  transform: scale(1.08);
+  filter: saturate(1.12) contrast(1.06);
+}
+
+/* overlay más elegante + blur */
+.collection-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(120% 100% at 0% 100%, rgba(0,0,0,.78) 0%, rgba(0,0,0,.15) 65%),
+    linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.05));
+  backdrop-filter: blur(2px);
+}
+
+/* shine sutil */
+.collection-card::after{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 35%, rgba(255,255,255,.10) 50%, rgba(255,255,255,0) 65%);
+  transform: translateX(-60%) rotate(8deg);
+  transition: transform .55s ease;
+  pointer-events:none;
+}
+.collection-card:hover::after{
+  transform: translateX(45%) rotate(8deg);
+}
+
+.collection-title{
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:12px;
+
+  font-weight:900;
+  font-size:16px;
+  letter-spacing:.2px;
+  color:#fff;
+
+  text-shadow: 0 10px 22px rgba(0,0,0,.55);
+
+  /* evita desbordes */
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+/* Responsive: cards un poco más compactas */
+@media (max-width: 520px){
+  .collection-card{ width:220px; height:118px; border-radius:16px; }
+  .collection-title{ font-size:15px; }
+}
+
+/* =========================
+   Página collection.html
+========================= */
+
+.collection-header{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding:18px 16px 10px;
+}
+
+.back-btn{
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.07);
+  color:#fff;
+  padding:10px 12px;
+  border-radius:14px;
+  cursor:pointer;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.10);
+
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.back-btn:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+}
+.back-btn:active{ transform: translateY(0); }
+
+.collection-page-title{
+  margin:0;
+  font-size:22px;
+  font-weight:950;
+  letter-spacing:.2px;
+}
+
+.collection-page-desc{
+  margin:6px 0 0;
+  color:rgba(255,255,255,.68);
+  font-size:13px;
+  line-height:1.35;
+}
+
+.collection-main{
+  padding: 12px 16px 28px;
+}
+
+/* grid más consistente + “masonry feel” */
+.collection-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap:14px;
+}
+
+@media (max-width: 420px){
+  .collection-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.collection-item{
+  border-radius:18px;
+  overflow:hidden;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  cursor:pointer;
+
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.10);
+
+  transform: translateZ(0);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.collection-item:hover{
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,.18);
+  box-shadow:
+    0 18px 46px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.collection-item-poster{
+  position:relative;
+  height:240px;
+  background: rgba(255,255,255,.05);
+}
+
+.collection-item-poster img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform: scale(1.02);
+  transition: transform .35s ease, filter .35s ease;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.collection-item:hover .collection-item-poster img{
+  transform: scale(1.06);
+  filter: saturate(1.12) contrast(1.06);
+}
+
+.collection-item-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.72) 100%),
+    radial-gradient(90% 80% at 50% 110%, rgba(0,0,0,.55), transparent 60%);
+}
+
+.collection-item-meta{
+  padding:10px 10px 12px;
+}
+
+.collection-item-title{
+  font-size:14px;
+  font-weight:900;
+  color:#fff;
+  line-height:1.15;
+
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.collection-item-sub{
+  margin-top:7px;
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  font-size:12px;
+  color:rgba(255,255,255,.72);
+}
+
+.noimg{
+  height:100%;
+  display:grid;
+  place-items:center;
+  color:rgba(255,255,255,.55);
+  font-size:12px;
+}
+
+.collection-msg{
+  margin-top:12px;
+  color:rgba(255,255,255,.70);
+}
+
+
+
+/* Ocultar scrollbar pero mantener scroll */
+.collections-track{
+  -ms-overflow-style: none;      /* IE y Edge antiguo */
+  scrollbar-width: none;         /* Firefox */
+}
+
+.collections-track::-webkit-scrollbar{
+  display: none;                 /* Chrome, Safari */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   SEARCH SECTION (HOME)
+========================= */
+
+/* =========================
+   Search launcher (Home)
+========================= */
+.search-launch{
+  padding: 18px 16px 6px;
+}
+
+.search-launch-btn{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+  border-radius: 18px;
+
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(12px);
+  color: rgba(255,255,255,.92);
+
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.search-launch-btn:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+.search-launch-btn:active{ transform: translateY(0); }
+
+.search-ico{
+  width: 40px;
+  height: 40px;  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+
+.search-text{
+  flex: 1;
+  font-weight: 800;
+  font-size: 13px;
+  text-align: left;
+  color: rgba(255,255,255,.92);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-hint{
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.18);
+  padding: 6px 8px;
+  border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Startup Modal Fullscreen ===== */
+.startup-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  place-items: center;
+  padding: 18px;
+
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.startup-modal.show{ display: grid; }
+
+.startup-card{
+  width: min(520px, 92vw);
+  border-radius: 22px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(20,20,26,.75);
+
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.06);
+
+  position: relative;
+}
+
+.startup-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  height: 38px;
+  width: 38px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  cursor: pointer;
+  font-weight: 900;
+
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.startup-close:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+}
+
+.startup-countdown{
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.30);
+  color: rgba(255,255,255,.88);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+.startup-media{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: rgba(255,255,255,.04);
+  display: grid;
+  place-items: center;
+}
+
+.startup-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.startup-text{
+  padding: 14px 16px 16px;
+}
+
+.startup-title{
+  font-size: 16px;
+  font-weight: 950;
+  color: rgba(255,255,255,.96);
+  margin-bottom: 6px;
+}
+
+.startup-message{
+  font-size: 13px;
+  line-height: 1.35;
+  color: rgba(255,255,255,.74);
+}

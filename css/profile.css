@@ -1,0 +1,186 @@
+/* ===== Profile (Modern) ===== */
+.profile-header{
+  height: 72px;
+  display:flex;
+  align-items:center;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(11,11,15,.85);
+  backdrop-filter: blur(12px);
+}
+
+.back-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  color: var(--text);
+  cursor: pointer;
+
+  transition: background .15s ease, transform .1s ease;
+}
+
+.back-btn:hover{
+  background: rgba(255,255,255,.12);
+}
+
+.back-btn:active{
+  transform: scale(0.96);
+}
+
+.back-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.profile-main{
+  padding: 28px 18px;
+  display:flex;
+  justify-content:center;
+}
+
+.profile-card{
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.profile-top{
+  display:flex;
+  gap: 14px;
+  align-items:center;
+  padding: 8px;
+}
+
+.profile-avatar{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.08);
+}
+
+.profile-top-text{
+  display:flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.profile-email{
+  font-size: 16px;
+  font-weight: 750;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-badge{
+  font-size: 12px;
+  color: var(--muted);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 6px 10px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.profile-grid{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 8px;
+}
+
+.info-tile{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  border-radius: 14px;
+  padding: 12px;
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.info-tile span{
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.info-tile strong{
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tile-row{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mini-btn{
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 650;
+  font-size: 12px;
+}
+
+.profile-actions{
+  margin-top: 12px;
+  display:grid;
+  gap: 10px;
+  padding: 8px;
+}
+
+.ghost-wide{
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.danger-btn{
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ff1a1a, #d20a0a);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.profile-msg{
+  min-height: 18px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 520px){
+  .profile-grid{ grid-template-columns: 1fr; }
+}

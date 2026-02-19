@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/collection.css" />
+  <title>Colecciones</title>
+</head>
+<body class="collection-body">
+
+  <header class="collection-header">
+    <button id="back-btn" class="icon-btn back-btn" type="button" aria-label="Volver">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <div class="collection-headtext">
+      <div class="mini-brand">COLECCION DE</div>
+      <h1 id="collection-title" class="collection-page-title">Colecciones</h1>
+      <p id="collection-desc" class="collection-page-desc"></p>
+    </div>
+  </header>
+
+  <main class="collection-main">
+    <div id="collection-grid" class="collection-grid"></div>
+    <p id="msg" class="collection-msg"></p>
+  </main>
+
+  <script type="module" src="js/collection.js"></script>
+</body>
+</html>

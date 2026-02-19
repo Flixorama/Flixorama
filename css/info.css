@@ -1,0 +1,613 @@
+/* =========================
+   INFO — Minimal Modern UI (Responsive)
+========================= */
+
+:root{
+  --info-max: 980px;
+  --glass: rgba(255,255,255,.05);
+  --glass2: rgba(0,0,0,.22);
+  --bd: rgba(255,255,255,.10);
+  --bd2: rgba(255,255,255,.14);
+  --txt: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.70);
+}
+
+/* Fondo general */
+.info-body{
+  background:
+    radial-gradient(1200px 700px at 15% 0%, rgba(255,26,26,.10), transparent 55%),
+    radial-gradient(900px 600px at 85% 10%, rgba(120,120,255,.10), transparent 55%),
+    var(--bg, #0b0b0f);
+  color: var(--text, #fff);
+  min-height: 100vh;
+}
+
+/* ===== Header sticky ===== */
+.info-header{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  display:flex;
+  align-items:flex-start;
+  gap: 12px;
+
+  padding: clamp(12px, 2.2vw, 16px) clamp(12px, 2.4vw, 16px) clamp(10px, 2vw, 14px);
+
+  background: rgba(11,11,15,.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.back-btn{
+  flex: 0 0 auto;
+  border: 1px solid var(--bd2);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.94);
+  padding: 10px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  min-height: 42px;
+}
+.back-btn:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+}
+.back-btn:active{ transform: translateY(0); }
+
+/* Bloque título */
+.info-head-txt{
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+.info-title{
+  margin: 0;
+  font-size: clamp(16px, 2.2vw, 18px);
+  font-weight: 950;
+  letter-spacing: .2px;
+  line-height: 1.15;
+}
+.info-sub{
+  margin: 0;
+  font-size: clamp(12px, 1.8vw, 13px);
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+/* ===== Main ===== */
+.info-main{
+  max-width: var(--info-max);
+  margin: 0 auto;
+  padding: clamp(12px, 2.4vw, 14px) clamp(12px, 2.6vw, 16px) clamp(22px, 3.6vw, 28px);
+  display: grid;
+  gap: 12px;
+}
+
+/* Cards */
+.card{
+  border-radius: 18px;
+  border: 1px solid var(--bd);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: clamp(12px, 2.4vw, 14px);
+
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Card head */
+.card-head{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  min-width: 0;
+}
+
+.card-title{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 950;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,.94);
+  min-width: 0;
+}
+
+.ico{
+  width: 34px;
+  height: 34px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  flex: 0 0 auto;
+}
+.ico svg{
+  width: 18px;
+  height: 18px;
+  fill: rgba(255,255,255,.88);
+}
+.ico.warn{
+  background: rgba(255,92,92,.10);
+  border-color: rgba(255,92,92,.22);
+}
+.ico.warn svg{ fill: rgba(255,210,210,.95); }
+
+.pill{
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.86);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  flex: 0 0 auto;
+}
+
+/* ===== Rows ===== */
+.rows{ display:grid; gap: 8px; }
+
+.row{
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.rows .row:first-child{ border-top: 0; padding-top: 0; }
+
+.k{
+  color: rgba(255,255,255,.68);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  flex: 0 0 auto;
+}
+
+.v{
+  color: rgba(255,255,255,.92);
+  font-size: 12px;
+  font-weight: 900;
+  text-align:right;
+  max-width: min(70%, 520px);
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* En móvil: valores a 2 líneas si hace falta */
+@media (max-width: 420px){
+  .row{ flex-direction: column; align-items: flex-start; }
+  .v{
+    text-align:left;
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+  }
+}
+
+/* ===== Link list ===== */
+.list{ display:grid; gap: 10px; }
+
+.item{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--bd);
+  background: var(--glass2);
+  color: var(--txt);
+  text-decoration:none;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  min-width: 0;
+}
+.item:hover{
+  background: rgba(0,0,0,.28);
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+}
+
+.item-ico{
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  flex: 0 0 auto;
+}
+.item-ico svg{
+  width: 18px;
+  height: 18px;
+  fill: rgba(255,255,255,.88);
+}
+.item-txt{
+  display:grid;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.item-title{
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: .2px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.item-sub{
+  font-size: 12px;
+  color: rgba(255,255,255,.65);
+  font-weight: 800;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chev{
+  margin-left:auto;
+  color: rgba(255,255,255,.45);
+  font-weight: 900;
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+/* ===== CTA PayPal ===== */
+.cta{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--bd);
+  background: var(--glass2);
+  color: var(--txt);
+  text-decoration:none;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  min-width: 0;
+}
+.cta:hover{
+  background: rgba(0,0,0,.28);
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+}
+
+.cta-ico{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: rgba(80,160,255,.10);
+  border: 1px solid rgba(80,160,255,.20);
+  flex: 0 0 auto;
+}
+.cta-ico svg{
+  width: 20px;
+  height: 20px;
+  fill: rgba(220,240,255,.95);
+}
+.cta-txt{ display:grid; gap: 2px; min-width:0; }
+.cta-title{
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing:.2px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cta-sub{
+  font-size: 12px;
+  color: rgba(255,255,255,.65);
+  font-weight:800;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== Buttons ===== */
+.actions{
+  margin-top: 10px;
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn{
+  border: 1px solid var(--bd2);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.94);
+  padding: 10px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 950;
+  letter-spacing: .2px;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  min-height: 42px;
+}
+.btn:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+}
+.btn:active{ transform: translateY(0); }
+.btn:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
+
+.btn.danger{
+  border-color: rgba(255,92,92,.35);
+  background: rgba(255,92,92,.12);
+}
+.btn.danger:hover{
+  border-color: rgba(255,92,92,.55);
+  background: rgba(255,92,92,.16);
+}
+
+/* ===== Social buttons (UNIFICADO + Responsive) ===== */
+.socials{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+@media (min-width: 560px){
+  .socials{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 920px){
+  .socials{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.soc{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--bd);
+  background: var(--glass2);
+  color: var(--txt);
+  text-decoration:none;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  min-width: 0;
+}
+.soc:hover{
+  background: rgba(0,0,0,.28);
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+}
+.soc-ico{
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  flex: 0 0 auto;
+}
+.soc-ico svg{
+  width: 18px;
+  height: 18px;
+  fill: rgba(255,255,255,.88);
+}
+.soc-txt{
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: .2px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Texto auxiliar */
+.hint{
+  margin-top: 10px;
+  color: rgba(255,255,255,.65);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.msg{
+  margin: 10px 2px 0;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+}
+
+/* ===== Modal legal ===== */
+.modal{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display:none;
+  place-items:center;
+  padding: clamp(12px, 3vw, 18px);
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.modal.show{ display:grid; }
+
+.modal-card{
+  width: min(820px, 100%);
+  max-height: min(86vh, 760px);
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(16,16,22,.92);
+  box-shadow: 0 30px 80px rgba(0,0,0,.55);
+}
+
+.modal-head{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 14px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+.modal-title{
+  font-size: 14px;
+  font-weight: 950;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,.95);
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.modal-close{
+  border: 1px solid var(--bd2);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.94);
+  padding: 8px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 950;
+  min-height: 40px;
+}
+
+.modal-body{
+  padding: 14px;
+  color: rgba(255,255,255,.82);
+  font-size: 13px;
+  line-height: 1.55;
+  overflow:auto;
+  white-space: pre-wrap; /* respeta saltos de línea de Firebase */
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .back-btn, .btn, .item, .cta, .soc { transition:none !important; }
+}
+
+
+
+/* =========================
+   INFO — Pro Settings Layout (2 columns desktop)
+   PÉGALO AL FINAL DEL CSS
+========================= */
+
+/* 1) Mejora base: cards más consistentes */
+.card{
+  scroll-margin-top: 88px; /* si luego haces anclas */
+}
+
+/* 2) Desktop: main en 2 columnas */
+@media (min-width: 980px){
+  .info-main{
+    display: grid;
+    grid-template-columns: 320px 1fr; /* sidebar + content */
+    gap: 14px;
+    align-items: start;
+  }
+
+  /* Sidebar sticky (columna izquierda) */
+  .info-main > .card{
+    position: relative;
+  }
+
+  /* Cards "sidebar": las hacemos sticky para UX tipo Settings */
+  .info-main > .card.is-side{
+    position: sticky;
+    top: 86px; /* debajo del header sticky */
+  }
+}
+
+/* ==========================================
+   3) Asignación automática a sidebar/content
+   SIN cambiar HTML: marcamos por orden.
+   AJUSTA estos nth-child() según tu orden real.
+========================================== */
+
+/*
+  EJEMPLO de orden típico (ajústalo):
+  1: Cuenta
+  2: Aplicación
+  3: Enlaces (Privacidad/Términos/Soporte)
+  4: Borrar datos (local)
+  5: Apóyanos
+  6: Síguenos
+  7: Acerca de
+*/
+
+/* En desktop: mandamos a la izquierda algunos cards */
+@media (min-width: 980px){
+  /* Sidebar: Enlaces + Borrar datos + Síguenos + Apóyanos */
+  .info-main > .card:nth-child(3),
+  .info-main > .card:nth-child(4),
+  .info-main > .card:nth-child(5),
+  .info-main > .card:nth-child(6){
+    grid-column: 1;
+  }
+
+  /* Content: Cuenta + Aplicación + Acerca de */
+  .info-main > .card:nth-child(1),
+  .info-main > .card:nth-child(2),
+  .info-main > .card:nth-child(7){
+    grid-column: 2;
+  }
+
+  /* Hacemos sticky SOLO a la primera card de sidebar (para que no “peleen”) */
+  .info-main > .card:nth-child(3){
+    position: sticky;
+    top: 86px;
+  }
+
+  /* Las demás sidebar se quedan normales (pero en columna izquierda) */
+  .info-main > .card:nth-child(4),
+  .info-main > .card:nth-child(5),
+  .info-main > .card:nth-child(6){
+    position: relative;
+  }
+}
+
+/* 4) Sidebar: compacta listas y socials para verse pro */
+@media (min-width: 980px){
+  /* List items un poquito más compactos */
+  .list{ gap: 8px; }
+  .item{ padding: 11px; border-radius: 16px; }
+  .item-ico{ width: 36px; height: 36px; }
+
+  /* Socials: en sidebar, 2 columnas fijas para no quedar enorme */
+  .socials{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 5) Content: rows más legibles en desktop */
+@media (min-width: 980px){
+  .row{
+    padding: 12px 0;
+  }
+  .v{
+    max-width: 520px;
+  }
+}
+
+/* 6) Ultra wide: más espacio, sidebar un poco más grande */
+@media (min-width: 1280px){
+  .info-main{
+    grid-template-columns: 360px 1fr;
+    gap: 16px;
+  }
+}
+
+/* 7) Ajuste modal en desktop */
+@media (min-width: 980px){
+  .modal-card{
+    max-height: min(82vh, 820px);
+  }
+}

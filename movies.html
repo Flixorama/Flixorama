@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/movies.css" />
+  <link rel="stylesheet" href="css/menubar.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Películas</title>
+</head>
+<body class="collection-body">
+
+  <header class="collection-header">
+    <div>
+      <h1 class="collection-page-title">Películas</h1>
+      <p class="collection-page-desc">Todas las películas del catálogo.</p>
+    </div>
+  </header>
+
+  <main class="collection-main">
+    <div class="movie-toolbar">
+      <input id="movie-search" class="movie-search" type="search" placeholder="Buscar película…" autocomplete="off" />
+    </div>
+
+    <div id="movies-grid" class="collection-grid"></div>
+    <p id="msg" class="collection-msg"></p>
+
+
+
+    <nav class="menu-bar pro" aria-label="Menú principal">
+
+        <a class="menu-item" href="home.html" data-route="home">
+            <span class="menu-ico">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5z"/>
+            </svg>
+            </span>
+            <span class="menu-txt">Inicio</span>
+        </a>
+
+        <a class="menu-item" href="movies.html" data-route="movies">
+            <span class="menu-ico">
+            <svg viewBox="0 0 24 24">
+                <path d="M4 7a2 2 0 0 1 2-2h1l1 2h2L9 5h2l1 2h2l-1-2h2l1 2h2l-1-2h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm4 4h8v2H8v-2z"/>
+            </svg>
+            </span>
+            <span class="menu-txt">Películas</span>
+        </a>
+
+        <a class="menu-item" href="series.html" data-route="series">
+            <span class="menu-ico">
+            <svg viewBox="0 0 24 24">
+                <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-5l2 3H9l2-3H6a2 2 0 0 1-2-2V6zm4 3h8v2H8V9z"/>
+            </svg>
+            </span>
+            <span class="menu-txt">Series</span>
+        </a>
+
+        <a class="menu-item" href="animes.html" data-route="animes">
+            <span class="menu-ico">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2c2.5 1.7 4 4 4 6.5 0 1.3-.4 2.5-1 3.6 1.7.6 3 2.2 3 4.2 0 2.6-2.1 4.7-4.7 4.7H10.7C8.1 19 6 16.9 6 14.3c0-2 1.3-3.6 3-4.2-.6-1.1-1-2.3-1-3.6C8 6 9.5 3.7 12 2z"/>
+            </svg>
+            </span>
+            <span class="menu-txt">Animes</span>
+        </a>
+
+        <a class="menu-item" href="info.html" data-route="info">
+            <span class="menu-ico">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            </span>
+            <span class="menu-txt">Info</span>
+        </a>
+
+    </nav>
+
+  </main>
+
+  <script type="module" src="js/movies.js"></script>
+  <script type="module" src="js/menubar.js"></script>
+</body>
+</html>

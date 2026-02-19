@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/search.css" />
+  <title>Buscar</title>
+</head>
+<body class="search-body">
+
+  <header class="search-header">
+    <button id="back-btn" class="icon-btn" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="search-head">
+      <h1 class="search-title">Buscar</h1>
+      <p class="search-sub">Películas · Series · Anime</p>
+    </div>
+  </header>
+
+  <main class="search-main">
+    <section class="search-bar">
+      <input id="search-input" class="search-input" type="text" placeholder="Buscar por título..." autocomplete="off" />
+      <button id="search-btn" class="search-btn" type="button">Buscar</button>
+    </section>
+
+    <section class="search-filters">
+      <button class="filter-btn active" data-type="all" type="button">Todo</button>
+      <button class="filter-btn" data-type="movie" type="button">Películas</button>
+      <button class="filter-btn" data-type="serie" type="button">Series</button>
+      <button class="filter-btn" data-type="anime" type="button">Anime</button>
+    </section>
+
+    <p id="msg" class="search-msg"></p>
+
+    <section id="results" class="search-grid"></section>
+  </main>
+
+  <script type="module" src="js/search.js"></script>
+</body>
+</html>

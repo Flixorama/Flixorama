@@ -1,0 +1,191 @@
+
+
+.search-body{
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.search-header{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(11,11,15,.85);
+  backdrop-filter: blur(12px);
+}
+
+
+.icon-btn{
+  width: 42px;
+  height: 42px;
+  display:grid;
+  place-items:center;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease;
+}
+.icon-btn:hover{ background: rgba(255,255,255,.10); }
+.icon-btn:active{ transform: scale(.96); }
+
+.search-head{ display:flex; flex-direction:column; gap:2px; }
+.search-title{ margin:0; font-size: 18px; font-weight: 900; letter-spacing:.2px; }
+.search-sub{ margin:0; font-size: 12px; color: rgba(255,255,255,.65); }
+
+.search-main{ padding: 14px 16px 26px; }
+
+.search-bar{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  margin-bottom: 12px;
+}
+
+.search-input{
+  flex:1;
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  padding: 0 14px;
+  outline: none;
+}
+
+.search-input::placeholder{ color: rgba(255,255,255,.45); }
+
+.search-btn{
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,80,110,.35);
+  background: linear-gradient(180deg, rgba(255,80,110,.95), rgba(210,40,80,.92));
+  color: #fff;
+  font-weight: 900;
+  cursor:pointer;
+  box-shadow: 0 14px 34px rgba(255,60,100,.18);
+  transition: transform .12s ease, filter .12s ease;
+}
+.search-btn:hover{ filter: brightness(1.06); transform: translateY(-1px); }
+.search-btn:active{ transform: translateY(0); }
+
+.search-filters{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.filter-btn{
+  border-radius: 999px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.88);
+  font-weight: 800;
+  cursor:pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  font-size: 12px;
+}
+.filter-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.18); }
+.filter-btn.active{
+  border-color: rgba(255,80,110,.42);
+  background: rgba(255,80,110,.14);
+}
+
+.search-msg{
+  margin: 10px 2px 0;
+  color: rgba(255,255,255,.70);
+  font-size: 13px;
+}
+
+.search-grid{
+  margin-top: 14px;
+  display:grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 520px){
+  .search-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 880px){
+  .search-grid{ grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+.s-card{
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  cursor:pointer;
+  transition: transform .14s ease, border-color .14s ease, background .14s ease;
+  box-shadow: 0 10px 26px rgba(0,0,0,.45);
+  outline: none;
+}
+.s-card:hover{ transform: translateY(-3px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.07); }
+
+.s-poster{
+  position: relative;
+  height: 220px;
+  background: rgba(255,255,255,.05);
+}
+.s-poster img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+.s-overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,.78) 100%);
+}
+.s-fallback{
+  height:100%;
+  display:grid;
+  place-items:center;
+  color: rgba(255,255,255,.7);
+  font-size: 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+}
+
+.s-meta{
+  padding: 10px 10px 12px;
+  display:grid;
+  gap: 8px;
+}
+
+.s-title{
+  font-size: 13px;
+  font-weight: 900;
+  color: rgba(255,255,255,.96);
+  line-height: 1.15;
+  letter-spacing: .2px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.s-sub{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.s-pill{
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.86);
+  font-weight: 800;
+  font-size: 11px;
+}

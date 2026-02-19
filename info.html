@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Info</title>
+  <link rel="stylesheet" href="css/info.css" />
+</head>
+
+<body class="info-body">
+
+  <header class="info-header">
+    <button id="back-btn" class="back-btn" type="button" aria-label="Volver">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <div class="info-head">
+      <h1 class="info-title">Info</h1>
+      <p class="info-sub">Cuenta, app y enlaces.</p>
+    </div>
+  </header>
+
+  <main class="info-main">
+
+    <!-- CUENTA (se queda igual: Auth) -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 2.25c-4.42 0-8 2.24-8 5v.75h16v-.75c0-2.76-3.58-5-8-5Z"/></svg>
+          </span>
+          Cuenta
+        </div>
+        <span id="user-status-pill" class="pill">—</span>
+      </div>
+
+      <div class="rows">
+        <div class="row">
+          <div class="k">Email</div>
+          <div id="user-email" class="v">—</div>
+        </div>
+        <div class="row">
+          <div class="k">Estado</div>
+          <div id="user-status" class="v">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APLICACIÓN (Firestore) -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.1 3.6L16.7 7l-3.6 1.1L12 11.7l-1.1-3.6L7.3 7l3.6-1.4L12 2Zm7 7l.8 2.5L22 12l-2.2.5L19 15l-.8-2.5L16 12l2.2-.5L19 9Zm-7 4l1.5 4.8L18 19l-4.5 1.2L12 24l-1.5-3.8L6 19l4.5-1.2L12 13Z"/></svg>
+          </span>
+          Aplicación
+        </div>
+      </div>
+
+      <div class="rows">
+        <div class="row">
+          <div class="k">Nombre</div>
+          <div id="app-name" class="v">—</div>
+        </div>
+        <div class="row">
+          <div class="k">Versión</div>
+          <div id="app-version" class="v">—</div>
+        </div>
+        <div class="row">
+          <div class="k">Build</div>
+          <div id="app-build" class="v mono">—</div>
+        </div>
+      </div>
+
+      <div class="hint">Estos valores se editan desde Firebase.</div>
+    </section>
+
+    <!-- ENLACES LEGALES (Modal flotante, texto desde Firestore) -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a3 3 0 0 1 4.2 4.2l-2 2a1 1 0 1 1-1.4-1.4l2-2a1 1 0 0 0-1.4-1.4l-3.5 3.5a1 1 0 0 1-1.4 0ZM13.4 10.6a1 1 0 0 1 0 1.4l-3.5 3.5a3 3 0 0 1-4.2-4.2l2-2A1 1 0 1 1 9.1 10l-2 2a1 1 0 0 0 1.4 1.4l3.5-3.5a1 1 0 0 1 1.4 0Z"/></svg>
+          </span>
+          Enlaces
+        </div>
+      </div>
+
+      <div class="list">
+        <button class="item" id="privacy-btn" type="button">
+          <span class="item-ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 10V8a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-8 0V8a3 3 0 0 1 6 0v2H9Z"/></svg>
+          </span>
+          <span class="item-txt">
+            <span class="item-title">Privacidad</span>
+            <span class="item-sub">Políticas</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+
+        <button class="item" id="terms-btn" type="button">
+          <span class="item-ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5Zm1 7h4v11H7V4h7v5Zm-6 4h8v2H9v-2Zm0 4h8v2H9v-2Z"/></svg>
+          </span>
+          <span class="item-txt">
+            <span class="item-title">Términos</span>
+            <span class="item-sub">Condiciones</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+
+        <button class="item" id="support-btn" type="button">
+          <span class="item-ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 4a6 6 0 0 1 4.24 10.24L14.8 14.8A3 3 0 0 0 12 10a3 3 0 0 0-2.8 4.8l-1.44 1.44A6 6 0 0 1 12 6Z"/></svg>
+          </span>
+          <span class="item-txt">
+            <span class="item-title">Soporte</span>
+            <span class="item-sub">Ayuda y contacto</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+      </div>
+
+      <p id="msg" class="msg"></p>
+    </section>
+
+    <!-- DATOS LOCALES (NO Firestore) -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <span class="ico warn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h8v2H3v-2Zm9.3-9.7 6.4-6.4 1.4 1.4-6.4 6.4-1.4-1.4ZM11 12.6l1.4 1.4-6.6 6.6H4.4v-1.4L11 12.6Z"/></svg>
+          </span>
+          Datos locales
+        </div>
+      </div>
+
+      <div class="rows">
+        <div class="row">
+          <div class="k">Progreso guardado</div>
+          <div id="local-stats" class="v">—</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="clear-local-btn" class="btn danger" type="button">Borrar datos</button>
+      </div>
+
+      <div class="hint">Esto borra datos del dispositivo (no afecta Firestore).</div>
+    </section>
+
+    <!-- APOYANOS (PayPal desde Firestore) -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9.1C.5 7.8 3.2 5 6.3 5c1.8 0 3.4.9 4.4 2.2C11.7 5.9 13.3 5 15.1 5c3.1 0 5.8 2.8 3.6 6.9C19 16.6 12 21 12 21Z"/></svg>
+          </span>
+          Apóyanos
+        </div>
+      </div>
+
+      <a class="cta" id="paypal-link" href="#" target="_blank" rel="noopener">
+        <span class="cta-ico">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20H4.6a1 1 0 0 1-1-1.2L5.6 5.2A2 2 0 0 1 7.6 3.6H14c3 0 5 1.6 5 4.2 0 3.6-2.7 6-6.8 6H9.6L9 18.6A1.6 1.6 0 0 1 7 20Zm3.2-8.2h1.9c2 0 3.4-1.1 3.4-2.9 0-1.2-.9-1.9-2.3-1.9H9.5l-.6 4.8h1.3Z"/></svg>
+        </span>
+        <span class="cta-txt">
+          <span class="cta-title">Donar con PayPal</span>
+          <span class="cta-sub">Ayúdanos a seguir mejorando</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+    </section>
+
+    <!-- SIGUENOS (links + iconos + YouTube) -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm7.9 9H17a15.6 15.6 0 0 0-1.3-5A8 8 0 0 1 19.9 11Z"/></svg>
+          </span>
+          Síguenos
+        </div>
+      </div>
+
+      <div class="socials">
+        <a class="soc" id="tiktok-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+          <span class="soc-ico">♪</span><span class="soc-txt">TikTok</span>
+        </a>
+        <a class="soc" id="facebook-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <span class="soc-ico">f</span><span class="soc-txt">Facebook</span>
+        </a>
+        <a class="soc" id="instagram-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <span class="soc-ico">◉</span><span class="soc-txt">Instagram</span>
+        </a>
+        <a class="soc" id="telegram-link" href="#" target="_blank" rel="noopener" aria-label="Telegram">
+          <span class="soc-ico">➤</span><span class="soc-txt">Telegram</span>
+        </a>
+        <a class="soc" id="x-link" href="#" target="_blank" rel="noopener" aria-label="X">
+          <span class="soc-ico">X</span><span class="soc-txt">X</span>
+        </a>
+        <a class="soc" id="youtube-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+          <span class="soc-ico">▶</span><span class="soc-txt">YouTube</span>
+        </a>
+      </div>
+
+      <div class="hint">Apoyanos siguiendonos en nuestras redes sociales.</div>
+    </section>
+
+    <!-- ACERCA DE (Firestore) -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"/></svg>
+          </span>
+          Acerca de
+        </div>
+      </div>
+
+      <p id="about-text" class="about">—</p>
+    </section>
+
+  </main>
+
+  <!-- MODAL (Privacidad / Términos / Soporte) -->
+  <div id="legal-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card" role="document">
+      <div class="modal-head">
+        <div id="legal-title" class="modal-title">—</div>
+        <button id="legal-close" class="modal-close" type="button" aria-label="Cerrar">✕</button>
+      </div>
+      <div id="legal-body" class="modal-body">—</div>
+    </div>
+  </div>
+
+  <script type="module" src="js/info.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Episodios | Streaming App</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/episodes.css">
+</head>
+
+<body class="ep-body">
+  <header class="ep-header">
+    <button id="back-btn" class="icon-btn" aria-label="Volver">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="ep-titlebar">
+      <div id="show-title" class="ep-title">Cargando…</div>
+      <div id="show-sub" class="ep-sub">Selecciona una temporada</div>
+    </div>
+  </header>
+
+  <main class="ep-main">
+    <section class="season-bar">
+      <div class="season-label">Temporadas</div>
+      <div id="season-buttons" class="season-buttons"></div>
+    </section>
+
+    <section class="episodes">
+      <div class="episodes-head">
+        <h2 id="episodes-title" class="episodes-title">Temporada</h2>
+        <span id="episodes-count" class="episodes-count"></span>
+      </div>
+
+      <div id="episodes-list" class="episodes-list"></div>
+      <p id="msg" class="msg"></p>
+    </section>
+  </main>
+
+
+
+    <!-- Player Modal (oculto hasta seleccionar episodio) -->
+    <!-- Player Modal -->
+    <div id="player-modal" class="player-modal" aria-hidden="true">
+      <div class="player-shell">
+        <button id="player-close" class="player-close" type="button" aria-label="Cerrar">✕</button>
+
+        <div class="player-top">
+          <div id="player-ep-title" class="player-ep-title">Episodio</div>
+
+          <div class="player-actions">
+            <button id="player-prev" class="pbtn" type="button">⟵ Anterior</button>
+            <button id="player-skip-intro" class="pbtn ghost" type="button">Saltar intro</button>
+            <button id="player-next" class="pbtn" type="button">Siguiente ⟶</button>
+          </div>
+        </div>
+
+        <video id="ep-video" class="ep-video" controls playsinline></video>
+      </div>
+
+      <!-- Toast -->
+      <div id="player-toast" class="player-toast" aria-live="polite"></div>
+    </div>
+
+
+
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="resume-modal" aria-hidden="true">
+      <div class="resume-card" role="dialog" aria-modal="true">
+        <div class="resume-top">
+          <div class="resume-title">¿Continuar viendo?</div>
+          <button id="resume-close" class="resume-x" type="button">✕</button>
+        </div>
+
+        <div id="resume-subtitle" class="resume-subtitle">Tienes progreso guardado.</div>
+
+        <div class="resume-actions">
+          <button id="resume-continue" class="resume-btn primary" type="button">Continuar viendo</button>
+          <button id="resume-restart" class="resume-btn" type="button">Ver desde el principio</button>
+        </div>
+      </div>
+    </div>
+
+
+  <script type="module" src="js/episodes.js"></script>
+</body>
+</html>

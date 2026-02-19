@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Streaming App</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+
+<body class="auth-body">
+
+  <div class="auth-container">
+      <div class="auth-header">
+        <div class="logo">𝕱𝖑𝖎𝖝𝖔𝖗𝖆𝖒𝖆</div>
+        <h2 id="form-title">Iniciar sesión</h2>
+        <p class="auth-subtitle" id="form-subtitle">y disfruta de tu contenido favorito</p>
+      </div>
+
+      <div class="auth-form">
+        <label class="field">
+          <span>Correo</span>
+          <input type="email" id="email" placeholder="tu@email.com" autocomplete="email">
+        </label>
+
+        <label class="field">
+          <span>Contraseña</span>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+        </label>
+
+        <button id="auth-btn" class="primary-btn">Entrar</button>
+
+        <p class="toggle" id="toggle-text">
+          ¿No tienes cuenta? <span id="toggle-form">Crear cuenta</span>
+        </p>
+
+        <p id="error" class="error"></p>
+      </div>
+  </div>
+  
+  <script type="module" src="js/firebase.js"></script>
+  <script type="module" src="js/auth.js"></script>
+
+
+</body>
+</html>

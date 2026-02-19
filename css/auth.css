@@ -1,0 +1,99 @@
+/* ===== Auth ===== */
+.auth-body {
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(255,26,26,.18), transparent 60%),
+    radial-gradient(900px 500px at 80% 20%, rgba(120,70,255,.18), transparent 55%),
+    var(--bg);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 80px rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+}
+
+.auth-header {
+  padding: 10px;
+}
+
+.logo {
+  width: 120px;
+  height: 45px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.08);
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+  color: #ecb02e;
+}
+
+.auth-header h2 {
+  font-size: 22px;
+}
+
+.auth-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.auth-form {
+  padding: 10px;
+  display: grid;
+  gap: 12px;
+}
+
+.field span {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.25);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.primary-btn {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(180deg, #ff1a1a, #d20a0a);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toggle {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+#toggle-form {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #d20a0a;
+  margin-left: 10px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 13px;
+  min-height: 18px;
+}

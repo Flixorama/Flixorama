@@ -1,0 +1,132 @@
+/* =========================
+   MENUBAR PRO (sin buscar)
+========================= */
+
+.menu-bar.pro{
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2000;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+
+  padding: 10px;
+  border-radius: 18px;
+
+  background: rgba(14,14,18,.64);
+  border: 1px solid rgba(255,255,255,.10);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Oculta scroll si en algún caso desborda (móvil raro) */
+.menu-bar.pro{
+  overflow: hidden;
+}
+
+/* Item */
+.menu-bar.pro .menu-item{
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 6px;
+
+  padding: 10px 8px;
+  border-radius: 14px;
+
+  color: rgba(255,255,255,.78);
+  text-decoration: none;
+
+  transition: transform .14s ease, background .14s ease, color .14s ease;
+}
+
+/* Icono */
+.menu-bar.pro .menu-ico{
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+}
+
+.menu-bar.pro .menu-ico svg{
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  opacity: .92;
+}
+
+/* Texto */
+.menu-bar.pro .menu-txt{
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .15px;
+  opacity: .9;
+}
+
+/* Hover */
+.menu-bar.pro .menu-item:hover{
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  transform: translateY(-1px);
+}
+
+.menu-bar.pro .menu-item:active{
+  transform: translateY(0);
+}
+
+/* Estado activo: pill con glow sutil */
+.menu-bar.pro .menu-item.active{
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* Línea inferior/indicador activo */
+.menu-bar.pro .menu-item.active::after{
+  content:"";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 7px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,26,26,.0), rgba(255,26,26,.95), rgba(255,26,26,.0));
+  opacity: .95;
+}
+
+/* Focus accesible */
+.menu-bar.pro .menu-item:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.14),
+    0 0 0 6px rgba(255,26,26,.22);
+}
+
+/* Responsive */
+@media (max-width: 360px){
+  .menu-bar.pro{
+    left: 10px;
+    right: 10px;
+    padding: 9px;
+    gap: 8px;
+  }
+  .menu-bar.pro .menu-txt{
+    font-size: 10px;
+  }
+}
+
+/* Evita que el contenido quede tapado por el menú */
+body{
+  padding-bottom: 105px;
+}
